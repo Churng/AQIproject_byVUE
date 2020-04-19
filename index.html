@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空污事件</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <div class="top">
+            <div class="city">
+                <h1>空氣品質指標（AQI）</h1>
+                <select class="area" @change="test(ChangeCity)" v-model="ChangeCity">
+                    <option value="">請選擇地區</option>
+                    <option :value="county" v-for="(data, county) in AQIDatas">{{county}}</option>
+                    <!-- <option value="Pingtung">屏東</option>
+                    <option value="Kaohsiung">高雄</option>
+                    <option value="Tainan">台南</option> -->
+                </select>
+            </div>
+            <div class="scaleBar">
+                <table >
+                    <tr>
+                        <th scope="col" class="box-1">0~50</th>
+                        <th scope="col" class="box-2">51~100</th>
+                        <th scope="col" class="box-3">101~150</th>
+                        <th scope="col" class="box-4">151~200</th>
+                        <th scope="col" class="box-5">201~300</th>
+                        <th scope="col" class="box-6">301~400</th>
+                    </tr>
+                    <tr>
+                        <td>良好</td>
+                        <td>普通</td>
+                        <td><p>對敏感族群</p><p>不健康</p></td>
+                        <td><p>對所有族群</p><p>不健康</p></td>
+                        <td>非常不健康</td>
+                        <td>危害</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <section>
+            <div class="titleArea">
+                <h2>{{ChangeCity}}</h2>
+                <div class="dashed"></div>
+                <div class="text" >
+                    <!-- 2020-04-14 17:00 -->
+                    <p> {{ newTime}} <span>更新</span></p>
+                    
+                </div>
+            </div>
+            <div class="contentArea">
+                <div class="sideMenu">
+                    <div class="item" >
+                        <p class="itemtitle">{{ countyItem.SiteName}}</p>
+                        <span class="itemaqi" :class="bgColor(countyItem)">{{countyItem.AQI}}</span>  
+                    </div>
+                    <div class="itemContent">
+                        <ul >
+                            <li >
+                                <div class="itemTex">
+                                    <p>臭氧 <span>O3 (ppb)</span></p>
+                                    <p class="num">{{countyItem.O3}}</p>
+                                </div>  
+                            </li>
+                            <li>
+                                <div class="itemTex">
+                                    <p>懸浮微粒 <span>PM10 (μg/m³)</span></p>
+                                    <p class="num">{{countyItem.PM10}}</p>
+                                </div>  
+                            </li>
+                            <li>
+                                <div class="itemTex">
+                                    <p>細懸浮微粒 <span>PM2.5 (μg/m³)</span></p>
+                                    <p class="num">{{countyItem["PM2.5"]}}</p>
+                                </div>  
+                            </li>
+                            <li>
+                                <div class="itemTex">
+                                    <p>一氧化碳 <span>CO (ppm)</span></p>
+                                    <p class="num">{{countyItem.CO}}</p>
+                                </div>  
+                            </li>
+                            <li>
+                                <div class="itemTex">
+                                    <p>二氧化硫 <span>SO2 (ppb)</span></p>
+                                    <p class="num">{{countyItem.SO2}}</p>
+                                </div>  
+                            </li>
+                            <li >
+                                <div class="itemTex boderN">
+                                    <p>二氧化氮 <span>NO2 (ppb)</span></p>
+                                    <p class="num">{{countyItem.NO2}}</p>
+                                </div>  
+                            </li>
+                        </ul> 
+                    </div>    
+                </div>
+            
+                <div class="formcontent">
+                    <ul class="list">
+                        <li v-for ="aqisite in newData" @click="changeCountyItem(aqisite)">
+                            <div class="item" >
+                                <!--  -->
+                                <p>{{ aqisite.SiteName}}</p>
+                                <!--1/綁定class 名稱，將參數 aqisite 傳進來取得數據-->
+                                <span :class="bgColor(aqisite)" >{{aqisite.AQI}}</span>  
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div class="footer">
+        <p>資料來源：行政院環境保護署</p>
+        <span>Copyright © 2019 HexSchool. All rights reserved.</span>
+    </div>
+</body>
+</html>
+<script src="./main.js"></script>

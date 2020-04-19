@@ -1,0 +1,211 @@
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 36px;
+}
+
+
+#wrap{
+    padding: 4rem 8.5rem;
+    font-family: "Microsoft JhengHei";
+    background-color: #F0F0F0;
+    font-weight: 900;
+}
+
+//標題文字、顏色指標
+.top{
+    display: flex;
+    padding: 30px;
+    .city{
+        margin-right: 30px;
+        select{
+            margin-top: 20px;
+            width: 360px;
+            height: 56px;
+            border: 3px solid $color-black;
+            background-color: $color-white;
+        }
+    }
+}
+
+.scaleBar{
+    display: flex;
+    justify-content: center ;
+    width: 43rem;
+    align-items: center;
+    table{
+        width: 100%;
+        border: 3px solid #000000;
+        font-size: 16px;
+        tr{
+            height: 56px;
+            padding: 1.6rem 0rem;
+            td{
+                background-color: $color-white;
+            }
+        }
+    }
+}
+.scaleBar table tr span {
+    display: inline-block;
+  }
+  
+.scaleBar table th, .scaleBar table td {
+    width: 16.66%;
+    border: 3px solid #000000;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+//城市、更新時間
+
+.titleArea{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 32px;
+    .dashed{
+        width: 800px;
+        border-bottom: 2px dotted $color-black;
+    }
+    .text{
+       p{
+        font-size: 16px;
+       }＆
+       span{
+        font-size: 16px;
+       }
+    }
+}
+
+//下方文件資料
+
+.contentArea{
+    display: flex;
+    width: 100%;
+    .sideMenu{
+        width: 40%;
+        margin-left: 30px;
+        margin-right: 44px;
+    }
+}
+
+.item{
+    display: flex;
+    border: 2px solid $color-black;
+    box-sizing: border-box;
+    text-align: center;
+
+    .itemtitle{
+        font-size: 36px;
+        background-color:$color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 188px;
+    }
+    .itemaqi{
+        font-size: 48px;
+        border-left: 3px solid #000000;
+        padding: 20px;
+        flex-grow: 1;
+    }
+}
+
+.itemContent{
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: $color-white;
+}
+.itemTex{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+    p{
+        font-size: 24px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        span{
+            font-size: 16px;
+        }
+    }
+}
+
+.boderN{
+    border: none;
+}
+
+.formcontent{
+    width: 80%;
+    
+}
+
+.list{
+    flex-wrap: wrap;
+    display: inline-flex;
+    li{
+        display: flex;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+        p{
+            font-size: 36px;
+            background-color: #FFFFFF;
+            // padding: 26px 30px;
+            width: 180px;
+            height: 88px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        span{
+            font-size: 48px;
+            border-left: 3px solid #000000;
+            // padding: 10px 30px;
+            // background-color: #FF5757;
+            width: 151px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+        }
+    }
+ 
+}
+
+//footer 
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color:$color-black;
+    color: $color-gray;
+    text-align: center;
+    padding: 6px;
+}
+
+
+.box-1{
+    background-color:$color-lightgreen;
+}
+.box-2{
+    background-color: $color-lightyellow;
+}
+.box-3{
+    background-color: $color-orange;
+}
+.box-4{
+    background-color: $color-deeporange;
+}
+.box-5{
+    background-color: $color-purple;
+}
+.box-6{
+    background-color: $color-deeppurple;
+}
